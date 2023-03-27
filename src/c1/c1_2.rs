@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 
+#[allow(dead_code)]
 pub fn is_permutation_equal(a: &str, b: &str) -> bool {
     count_chars(a) == count_chars(b)
 }

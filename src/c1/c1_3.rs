@@ -1,6 +1,6 @@
+#[allow(dead_code)]
 pub fn urlify(input: &mut str, length: usize) -> &mut str {
     let spaces = input.bytes().take(length).filter(|&b| b == b' ').count();
-    let new_length = spaces * 2 + length;
     unsafe {
         let bytes = input.as_bytes_mut();
         let mut spaces_left = spaces;

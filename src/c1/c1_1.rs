@@ -1,5 +1,6 @@
 use std::collections::HashSet;
 
+#[allow(dead_code)]
 pub fn all_chars_unique(input: &str) -> bool {
     let mut chars = HashSet::new();
     for c in input.chars() {
@@ -11,6 +12,7 @@ pub fn all_chars_unique(input: &str) -> bool {
     true
 }
 
+#[allow(dead_code)]
 pub fn all_chars_unique2(input: &str) -> bool {
     let mut sorted: Vec<char> = input.chars().collect();
     sorted.sort_by(|a, b| b.cmp(a));
