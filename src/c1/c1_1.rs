@@ -16,14 +16,7 @@ pub fn all_chars_unique(input: &str) -> bool {
 pub fn all_chars_unique2(input: &str) -> bool {
     let mut sorted: Vec<char> = input.chars().collect();
     sorted.sort_by(|a, b| b.cmp(a));
-    let mut prev_c: Option<char> = None;
-    for c in sorted {
-        if prev_c == Some(c) {
-            return false;
-        }
-        prev_c = Some(c);
-    }
-    true
+    sorted.windows(2).all(|window| window[0] != window[1])
 }
 
 #[cfg(test)]
